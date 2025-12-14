@@ -10,21 +10,140 @@
   <link rel="apple-touch-icon" href="/icon-192.png">
 
   <style>
-    body{font-family:system-ui,Arial;margin:0;background:#f7f7fb;color:#111}
-    header{padding:18px 16px;background:#fff;border-bottom:1px solid #eee}
-    h1{font-size:18px;margin:0}
-    .wrap{padding:16px;max-width:980px;margin:0 auto}
-    .grid{display:grid;gap:12px}
-    a.card{display:block;background:#fff;border:1px solid #eee;border-radius:14px;padding:14px;text-decoration:none;color:inherit}
-    .tag{display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;background:#f0eeff;margin-top:8px}
-  </style>
-<header style="text-align:center;">
-  <img src="Logo.png" alt="Descodifica Tu Mente" style="
-    width:180px;
+  :root{
+    --bg:#f6f7fb;
+    --card:#ffffff;
+    --text:#121826;
+    --muted:#6b7280;
+    --border:#e5e7eb;
+    --accent:#6b4eff;
+    --accent2:#9b8cff;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial;
+    margin:0;
+    background: radial-gradient(1200px 600px at 20% -10%, rgba(107,78,255,.18), transparent 60%),
+                radial-gradient(900px 500px at 90% 0%, rgba(155,140,255,.18), transparent 55%),
+                var(--bg);
+    color:var(--text);
+  }
+
+  header{
+    padding:26px 16px 14px;
+    background: transparent;
+  }
+
+  .wrap{padding:18px 16px; max-width:920px; margin:0 auto}
+
+  .brand{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+    text-align:center;
     margin-bottom:12px;
-  ">
-  <h1>Descodifica Tu Mente</h1>
+  }
+
+  .brand img{
+    width:120px;
+    height:120px;
+    object-fit:contain;
+    border-radius:24px;
+    box-shadow: 0 10px 30px rgba(17,24,39,.10);
+    background:#fff;
+    padding:10px;
+    border:1px solid var(--border);
+  }
+
+  .brand h1{
+    font-size:26px;
+    margin:0;
+    letter-spacing:.2px;
+  }
+
+  .brand p{
+    margin:0;
+    color:var(--muted);
+    font-size:14px;
+  }
+
+  .grid{
+    display:grid;
+    gap:14px;
+    margin-top:14px;
+  }
+
+  a.card{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:14px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:16px 16px;
+    text-decoration:none;
+    color:inherit;
+    box-shadow: 0 10px 30px rgba(17,24,39,.06);
+    transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  }
+
+  a.card:hover{
+    transform: translateY(-1px);
+    box-shadow: 0 16px 40px rgba(17,24,39,.10);
+    border-color: rgba(107,78,255,.35);
+  }
+
+  a.card strong{
+    font-size:16px;
+    font-weight:700;
+  }
+
+  .tag{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:12px;
+    padding:6px 10px;
+    border-radius:999px;
+    background: rgba(107,78,255,.10);
+    color: #3d2fd6;
+    border:1px solid rgba(107,78,255,.18);
+    white-space:nowrap;
+  }
+
+  .tag.dot::before{
+    content:"";
+    width:8px;
+    height:8px;
+    border-radius:999px;
+    background: var(--accent);
+    display:inline-block;
+  }
+
+  footer{
+    padding:14px 16px 26px;
+    text-align:center;
+    color:var(--muted);
+    font-size:12px;
+  }
+
+  @media (min-width:720px){
+    .grid{grid-template-columns: 1fr}
+    a.card{padding:18px 18px}
+  }
+</style>
+
+<header>
+  <div class="wrap brand">
+    <img src="Logo.png" alt="Descodifica Tu Mente">
+    <h1>Descodifica Tu Mente</h1>
+    <p>Instituto y terapia integral • Turnos online • Recursos guiados</p>
+  </div>
 </header>
+
   
   <main class="wrap">
     <div class="grid">
