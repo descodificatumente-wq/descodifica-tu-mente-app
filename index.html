@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Descodifica Tu Mente</title>
+
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#6b4eff">
+  <link rel="apple-touch-icon" href="/icon-192.png">
+
+  <style>
+    body{font-family:system-ui,Arial;margin:0;background:#f7f7fb;color:#111}
+    header{padding:18px 16px;background:#fff;border-bottom:1px solid #eee}
+    h1{font-size:18px;margin:0}
+    .wrap{padding:16px;max-width:980px;margin:0 auto}
+    .grid{display:grid;gap:12px}
+    a.card{display:block;background:#fff;border:1px solid #eee;border-radius:14px;padding:14px;text-decoration:none;color:inherit}
+    .tag{display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;background:#f0eeff;margin-top:8px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>Descodifica Tu Mente</h1>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="grid">
+      <a class="card" href="https://descodificatumente.com.ar" target="_blank">
+        <strong>Ir al sitio</strong>
+        <div class="tag">Cursos · Sesiones · Comunidad</div>
+      </a>
+
+      <a class="card" href="#">
+        <strong>Reservar turno</strong>
+        <div class="tag">Próximamente</div>
+      </a>
+
+      <a class="card" href="#">
+        <strong>Respiraciones</strong>
+        <div class="tag">Ejercicios guiados</div>
+      </a>
+    </div>
+  </main>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/service-worker.js");
+    }
+  </script>
+</body>
+</html>
