@@ -9,138 +9,172 @@
   <meta name="theme-color" content="#6b4eff">
   <link rel="apple-touch-icon" href="/icon-192.png">
 
-  <style>
+<style>
   :root{
-    --bg:#f6f7fb;
-    --card:#ffffff;
-    --text:#121826;
-    --muted:#6b7280;
-    --border:#e5e7eb;
-    --accent:#6b4eff;
-    --accent2:#9b8cff;
+    --bg1:#f7f4ff;
+    --bg2:#eef6ff;
+    --card:#ffffffcc;
+    --text:#0f172a;
+    --muted:#64748b;
+    --brand:#6d28d9;
+    --brand2:#2563eb;
+    --ring: rgba(109,40,217,.25);
+    --shadow: 0 20px 60px rgba(15,23,42,.12);
+    --shadow2: 0 10px 30px rgba(15,23,42,.10);
+    --radius: 22px;
   }
 
   *{box-sizing:border-box}
   body{
-    font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial;
     margin:0;
-    background: radial-gradient(1200px 600px at 20% -10%, rgba(107,78,255,.18), transparent 60%),
-                radial-gradient(900px 500px at 90% 0%, rgba(155,140,255,.18), transparent 55%),
-                var(--bg);
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
     color:var(--text);
+    background:
+      radial-gradient(1200px 600px at 20% 10%, rgba(109,40,217,.18), transparent 60%),
+      radial-gradient(900px 500px at 85% 20%, rgba(37,99,235,.16), transparent 60%),
+      linear-gradient(180deg, var(--bg1), var(--bg2));
+    min-height:100vh;
   }
+
+  .wrap{max-width:980px;margin:0 auto;padding:24px 18px;}
+  .topbar{
+    position:sticky; top:0; z-index:5;
+    backdrop-filter: blur(12px);
+    background: linear-gradient(90deg, rgba(109,40,217,.85), rgba(37,99,235,.85));
+    color:#fff;
+    box-shadow: 0 8px 24px rgba(2,6,23,.18);
+  }
+  .topbar .wrap{padding:14px 18px}
+  .topbar .title{font-weight:700; letter-spacing:.2px}
 
   header{
-    padding:26px 16px 14px;
-    background: transparent;
+    padding:26px 0 10px;
   }
-
-  .wrap{padding:18px 16px; max-width:920px; margin:0 auto}
 
   .brand{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:10px;
     text-align:center;
-    margin-bottom:12px;
+    padding:24px 18px 10px;
   }
-
+  .logo-wrap{
+    width:112px; height:112px;
+    margin:0 auto 14px;
+    border-radius:28px;
+    background: rgba(255,255,255,.8);
+    box-shadow: var(--shadow2);
+    display:flex; align-items:center; justify-content:center;
+    border:1px solid rgba(15,23,42,.06);
+  }
   .brand img{
-    width:120px;
-    height:120px;
+    width:86px; height:86px;
     object-fit:contain;
-    border-radius:24px;
-    box-shadow: 0 10px 30px rgba(17,24,39,.10);
-    background:#fff;
-    padding:10px;
-    border:1px solid var(--border);
+    border-radius:18px;
   }
-
-  .brand h1{
-    font-size:26px;
-    margin:0;
-    letter-spacing:.2px;
-  }
-
-  .brand p{
-    margin:0;
-    color:var(--muted);
-    font-size:14px;
-  }
+  h1{margin:0;font-size:34px;line-height:1.1}
+  .sub{margin:10px 0 0;color:var(--muted);font-size:14.5px}
 
   .grid{
     display:grid;
     gap:14px;
-    margin-top:14px;
+    margin-top:18px;
   }
 
-  a.card{
+  .card{
     display:flex;
     align-items:center;
     justify-content:space-between;
     gap:14px;
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:18px;
-    padding:16px 16px;
+    padding:18px 18px;
+    border-radius: var(--radius);
     text-decoration:none;
     color:inherit;
-    box-shadow: 0 10px 30px rgba(17,24,39,.06);
-    transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+    background: var(--card);
+    border:1px solid rgba(15,23,42,.07);
+    box-shadow: var(--shadow2);
+    transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
   }
-
-  a.card:hover{
-    transform: translateY(-1px);
-    box-shadow: 0 16px 40px rgba(17,24,39,.10);
-    border-color: rgba(107,78,255,.35);
+  .card:hover{
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+    border-color: rgba(109,40,217,.18);
   }
-
-  a.card strong{
+  .left{
+    display:flex; align-items:center; gap:14px;
+    min-width:0;
+  }
+  .icon{
+    width:46px; height:46px;
+    border-radius:16px;
+    display:flex; align-items:center; justify-content:center;
+    background: linear-gradient(135deg, rgba(109,40,217,.12), rgba(37,99,235,.10));
+    border:1px solid rgba(109,40,217,.10);
+    flex:0 0 auto;
+  }
+  .icon svg{width:22px; height:22px; color: var(--brand)}
+  .maintext{min-width:0}
+  .maintext strong{
+    display:block;
     font-size:16px;
-    font-weight:700;
+    margin-bottom:4px;
   }
-
-  .tag{
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
-    font-size:12px;
-    padding:6px 10px;
-    border-radius:999px;
-    background: rgba(107,78,255,.10);
-    color: #3d2fd6;
-    border:1px solid rgba(107,78,255,.18);
-    white-space:nowrap;
-  }
-
-  .tag.dot::before{
-    content:"";
-    width:8px;
-    height:8px;
-    border-radius:999px;
-    background: var(--accent);
-    display:inline-block;
-  }
-
-  footer{
-    padding:14px 16px 26px;
-    text-align:center;
+  .meta{
     color:var(--muted);
-    font-size:12px;
+    font-size:13px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    max-width:62vw;
   }
 
-  @media (min-width:720px){
-    .grid{grid-template-columns: 1fr}
-    a.card{padding:18px 18px}
+  .pill{
+    font-size:12px;
+    padding:7px 10px;
+    border-radius:999px;
+    background: rgba(109,40,217,.10);
+    color: var(--brand);
+    border:1px solid rgba(109,40,217,.16);
+    flex:0 0 auto;
+  }
+
+  .section-title{
+    margin:22px 0 8px;
+    font-size:12px;
+    letter-spacing:.18em;
+    color: rgba(100,116,139,.9);
+    text-transform: uppercase;
+  }
+
+  .note{
+    margin-top:16px;
+    padding:14px 16px;
+    border-radius: 18px;
+    background: rgba(255,255,255,.75);
+    border:1px solid rgba(15,23,42,.07);
+    color: var(--muted);
+    font-size:13px;
+  }
+
+  @media (min-width: 720px){
+    .grid{gap:16px}
+    .card{padding:20px 22px}
+    h1{font-size:38px}
   }
 </style>
 
+
+<header>
+<div class="topbar">
+  <div class="wrap">
+    <div class="title">Descodifica Tu Mente</div>
+  </div>
+</div>
+
 <header>
   <div class="wrap brand">
-    <img src="Logo.png" alt="Descodifica Tu Mente">
+    <div class="logo-wrap">
+      <img src="Logo.png" alt="Descodifica Tu Mente" />
+    </div>
     <h1>Descodifica Tu Mente</h1>
-    <p>Instituto y terapia integral • Turnos online • Recursos guiados</p>
+    <div class="sub">Instituto y terapia integral • Turnos online • Recursos guiados</div>
   </div>
 </header>
 
