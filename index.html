@@ -160,10 +160,30 @@
     font-size:13px;
   }
 .card.primary{
-  border: 2px solid var(--brand);
-  background: linear-gradient(180deg, #ffffff, #f5f3ff);
-  box-shadow: 0 12px 30px rgba(109,40,217,.18);
+  border: 2px solid rgba(109,40,217,.55);
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,.96),
+    rgba(245,243,255,.92)
+  );
+  box-shadow: 0 18px 45px rgba(109,40,217,.16);
+  position: relative;
+  overflow: hidden;
 }
+
+.card.primary::after{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  background: radial-gradient(
+    circle at 20% 20%,
+    rgba(109,40,217,.18),
+    transparent 55%
+  );
+  opacity:.9;
+  pointer-events:none;
+}
+
 
 .card.primary strong{
   color: var(--brand);
