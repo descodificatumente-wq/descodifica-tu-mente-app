@@ -159,6 +159,15 @@
     color: var(--muted);
     font-size:13px;
   }
+.card.primary{
+  border: 2px solid var(--brand);
+  background: linear-gradient(180deg, #ffffff, #f5f3ff);
+  box-shadow: 0 12px 30px rgba(109,40,217,.18);
+}
+
+.card.primary strong{
+  color: var(--brand);
+}
 
   @media (min-width: 720px){
     .grid{gap:16px}
@@ -228,7 +237,7 @@
         <div class="tag">Cursos · Sesiones · Comunidad</div>
       </a>
 
-    <a class="card"
+    <a class="card primary"
    href="https://calendar.app.google/QUCUhpgPStkrrvGR7"
    target="_blank">
   <strong>Reservar turno</strong>
